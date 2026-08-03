@@ -21,34 +21,37 @@ for root, dirs, files in os.walk(source_folder):
             input_path = os.path.join(root, file)
 
             relative_path = os.path.relpath(root, source_folder)
-
             save_folder = os.path.join(output_folder, relative_path)
 
-            if not os.path.exists(save_folder):
-                os.makedirs(save_folder)
+            os.makedirs(save_folder, exist_ok=True)
 
             output_name = os.path.splitext(file)[0] + ".webp"
-
             output_path = os.path.join(save_folder, output_name)
 
             try:
                 img = Image.open(input_path)
 
-img.thumbnail(
-    (max_size, max_size),
-    Image.Resampling.LANCZOS
-)
+                # 保留PNG透明
+                if img.mode in ("RGBA", "LA"):
+                    pass
+                elif img.mode == "P":
+                    img = img.convert("RGBA")
+                else:
+                    img = img.convert("RGB")
 
-# 保留透明通道
-if img.mode not in ("RGB", "RGBA"):
-    img = img.convert("RGBA")
+                # 缩放
+                img.thumbnail(
+                    (max_size, max_size),
+                    Image.Resampling.LANCZOS
+                )
 
-img.save(
-    output_path,
-    "WEBP",
-    quality=quality,
-    method=6
-)
+                # 保存WebP
+                img.save(
+                    output_path,
+                    "WEBP",
+                    quality=quality,
+                    method=6
+                )
 
                 count += 1
                 print("Done:", file)
