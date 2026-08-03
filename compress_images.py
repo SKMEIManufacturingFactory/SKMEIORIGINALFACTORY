@@ -34,17 +34,21 @@ for root, dirs, files in os.walk(source_folder):
             try:
                 img = Image.open(input_path)
 
-                img.thumbnail((max_size, max_size))
+img.thumbnail(
+    (max_size, max_size),
+    Image.Resampling.LANCZOS
+)
 
-                if img.mode in ("RGBA", "P"):
-                    img = img.convert("RGB")
+# 保留透明通道
+if img.mode not in ("RGB", "RGBA"):
+    img = img.convert("RGBA")
 
-                img.save(
-                    output_path,
-                    "WEBP",
-                    quality=quality,
-                    method=6
-                )
+img.save(
+    output_path,
+    "WEBP",
+    quality=quality,
+    method=6
+)
 
                 count += 1
                 print("Done:", file)
