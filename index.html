@@ -64,12 +64,7 @@
 
     <style>
         /* ---------- 全局重置 ---------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
             background-color: #f0f2f5;
@@ -79,8 +74,6 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-
-        /* ★ 几何装饰光晕 */
         body::before {
             content: '';
             position: fixed;
@@ -127,11 +120,7 @@
             min-height: 110px;
             transition: box-shadow 0.3s;
         }
-        .top-bar:hover {
-            box-shadow: 0 6px 32px rgba(0, 0, 0, 0.06);
-        }
-
-        /* 左栏 */
+        .top-bar:hover { box-shadow: 0 6px 32px rgba(0, 0, 0, 0.06); }
         .top-left {
             flex: 1;
             height: 100px;
@@ -146,16 +135,8 @@
             letter-spacing: 0.3px;
             white-space: nowrap;
         }
-        .top-left .icon {
-            font-size: 22px;
-            opacity: 0.7;
-        }
-        .top-left .highlight {
-            color: #d4a017;
-            font-weight: 600;
-        }
-
-        /* 中栏（Logo + 导航） */
+        .top-left .icon { font-size: 22px; opacity: 0.7; }
+        .top-left .highlight { color: #d4a017; font-weight: 600; }
         .top-center {
             flex: 2;
             display: flex;
@@ -164,21 +145,16 @@
             justify-content: center;
             gap: 4px;
         }
-
-        /* ★ Logo 样式：纵向放大，横向缩小，保持比例 */
         .logo-img {
-            height: 150px;          /* 从 110px 增加到 150px，纵向拉高 */
-            width: auto;            /* 由横向固定改为自动，让比例自然 */
-            max-width: 180px;       /* 限制最大宽度，避免过宽 */
-            object-fit: contain;    /* 保证图片完整显示，不裁剪不变形 */
+            height: 150px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
             display: block;
             transition: transform 0.3s ease;
             filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.04));
         }
-        .logo-img:hover {
-            transform: scale(1.02);
-        }
-
+        .logo-img:hover { transform: scale(1.02); }
         .nav-links {
             display: flex;
             gap: 36px;
@@ -204,21 +180,10 @@
             border-radius: 4px;
             transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .nav-links a:hover {
-            color: #d4a017;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .nav-links a.active {
-            color: #d4a017;
-            font-weight: 600;
-        }
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        /* 右栏 */
+        .nav-links a:hover { color: #d4a017; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: #d4a017; font-weight: 600; }
+        .nav-links a.active::after { width: 100%; }
         .top-right {
             flex: 1;
             height: 100px;
@@ -233,16 +198,8 @@
             letter-spacing: 0.3px;
             white-space: nowrap;
         }
-        .top-right .icon {
-            font-size: 20px;
-            opacity: 0.7;
-        }
-        .top-right .highlight {
-            color: #d4a017;
-            font-weight: 600;
-        }
-
-        /* 汉堡按钮（桌面隐藏） */
+        .top-right .icon { font-size: 20px; opacity: 0.7; }
+        .top-right .highlight { color: #d4a017; font-weight: 600; }
         .hamburger {
             display: none;
             flex-direction: column;
@@ -261,15 +218,9 @@
             border-radius: 2px;
             transition: all 0.3s ease;
         }
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
 
         /* ★ 面包屑 */
         .breadcrumb {
@@ -285,13 +236,8 @@
             gap: 8px;
             flex-wrap: wrap;
         }
-        .breadcrumb a {
-            color: #d4a017;
-            text-decoration: none;
-        }
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
+        .breadcrumb a { color: #d4a017; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
 
         /* ============================================================
            Banner 区域
@@ -335,9 +281,7 @@
             position: relative;
             z-index: 1;
         }
-        .hero h1 span {
-            color: #f1c40f;
-        }
+        .hero h1 span { color: #f1c40f; }
         .hero p {
             font-size: 20px;
             font-weight: 400;
@@ -412,9 +356,7 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-        .card:hover::before {
-            opacity: 1;
-        }
+        .card:hover::before { opacity: 1; }
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -430,9 +372,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
             transition: transform 0.3s;
         }
-        .card:hover .icon {
-            transform: scale(1.08);
-        }
+        .card:hover .icon { transform: scale(1.08); }
         .card h3 {
             font-size: 24px;
             font-weight: 700;
@@ -554,7 +494,6 @@
             border-radius: 50%;
             pointer-events: none;
         }
-
         .contact-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -565,8 +504,6 @@
             position: relative;
             z-index: 1;
         }
-
-        /* 左侧文字 */
         .contact-info h3 {
             font-size: 28px;
             font-weight: 700;
@@ -601,11 +538,7 @@
             color: #f1c40f;
             letter-spacing: 0.5px;
         }
-        .contact-info .label + span {
-            word-break: break-word;
-        }
-
-        /* 右侧名片图片（更大尺寸） */
+        .contact-info .label + span { word-break: break-word; }
         .contact-image {
             display: flex;
             justify-content: center;
@@ -645,9 +578,7 @@
             cursor: pointer;
             animation: fadeIn 0.3s ease;
         }
-        .modal-overlay.active {
-            display: flex;
-        }
+        .modal-overlay.active { display: flex; }
         .modal-overlay .modal-content {
             position: relative;
             max-width: 90vw;
@@ -664,9 +595,7 @@
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
-        .close-btn,
-        .gallery-prev,
-        .gallery-next {
+        .close-btn, .gallery-prev, .gallery-next {
             position: absolute;
             width: 45px;
             height: 45px;
@@ -682,35 +611,13 @@
             justify-content: center;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
         }
-        .close-btn:hover,
-        .gallery-prev:hover,
-        .gallery-next:hover {
-            background: #f1c40f;
-            color: #1e2a3a;
-        }
-        .close-btn {
-            top: -55px;
-            right: 0;
-        }
-        .gallery-prev {
-            left: -70px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .gallery-next {
-            right: -70px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+        .close-btn:hover, .gallery-prev:hover, .gallery-next:hover { background: #f1c40f; color: #1e2a3a; }
+        .close-btn { top: -55px; right: 0; }
+        .gallery-prev { left: -70px; top: 50%; transform: translateY(-50%); }
+        .gallery-next { right: -70px; top: 50%; transform: translateY(-50%); }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes scaleIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes scaleIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
         /* ============================================================
            页脚
@@ -724,381 +631,136 @@
             border-top: 1px solid #1e2c3a;
             letter-spacing: 0.3px;
         }
-        .footer-bottom a {
-            color: #f1c40f;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .footer-bottom a:hover {
-            color: #ffffff;
-        }
+        .footer-bottom a { color: #f1c40f; text-decoration: none; transition: color 0.3s; }
+        .footer-bottom a:hover { color: #ffffff; }
 
         /* ============================================================
-           响应式（三栏布局 + 汉堡菜单）
+           响应式
            ============================================================ */
         @media (max-width: 1024px) {
-            .image-row {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .image-row img {
-                height: 300px;
-            }
-            .contact-container {
-                gap: 30px;
-            }
-            .contact-image img {
-                max-width: 600px;
-            }
+            .image-row { grid-template-columns: repeat(3, 1fr); }
+            .image-row img { height: 300px; }
+            .contact-container { gap: 30px; }
+            .contact-image img { max-width: 600px; }
         }
 
         @media (max-width: 768px) {
-            /* 导航栏改为：汉堡 + 左栏 + 中栏(Logo) + 右栏，导航折叠 */
-            .top-bar {
-                flex-wrap: wrap;
-                padding: 12px 20px;
-                min-height: auto;
-                backdrop-filter: blur(8px);
-                align-items: center;
-            }
-
-            /* 汉堡显示 */
-            .hamburger {
-                display: flex;
-                order: 0;
-                margin-right: 4px;
-            }
-
-            .top-left,
-            .top-right {
-                height: auto;
-                font-size: 14px;
-                flex: 1 1 auto;
-                padding: 4px 0;
-                justify-content: center;
-                white-space: nowrap;
-            }
-            .top-left .icon,
-            .top-right .icon {
-                font-size: 16px;
-            }
-
-            .top-center {
-                flex: 1 1 100%;
-                order: 2;
-                margin: 4px 0;
-            }
-
-            /* ★ 移动端 Logo 尺寸同步调整 */
-            .logo-img {
-                height: 100px;          /* 移动端也纵向拉高 */
-                width: auto;
-                max-width: 130px;
-            }
-
-            /* 导航折叠 */
-            .nav-links {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-                max-height: 0;
-                overflow: hidden;
-                opacity: 0;
-                padding-top: 0;
-                transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s;
-                order: 3;
-                flex-basis: 100%;
-                border-top: 1px solid rgba(0, 0, 0, 0.05);
-                margin-top: 6px;
-            }
-            .nav-links.open {
-                max-height: 400px;
-                opacity: 1;
-                padding-top: 14px;
-            }
-            .nav-links a {
-                font-size: 17px;
-                text-align: center;
-                padding: 8px 0;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-            }
-            .nav-links a:last-child {
-                border-bottom: none;
-            }
-            .nav-links a::after {
-                display: none;
-            }
-
-            /* 其余内容适配 */
-            .hero {
-                margin: 20px 16px 0;
-                min-height: 40vh;
-                border-radius: 24px;
-                padding: 30px 16px;
-            }
-            .hero h1 {
-                font-size: 30px;
-            }
-            .hero p {
-                font-size: 16px;
-                padding: 8px 18px;
-            }
-
-            .services,
-            .factory-preview {
-                padding: 30px 20px;
-                margin: 20px 16px;
-                border-radius: 24px;
-            }
-            .services h2,
-            .factory-preview h2 {
-                font-size: 28px;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .image-row {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            .image-row img {
-                height: 220px;
-            }
-
-            /* 联系方式改为单列，图片在上方 */
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                text-align: left;
-            }
-            .contact-image {
-                order: -1;
-            }
-            .contact-image img {
-                max-width: 85%;
-                margin: 0 auto;
-            }
-
-            .contact-section {
-                padding: 40px 20px 30px;
-            }
-            .contact-info p {
-                flex-wrap: wrap;
-                gap: 6px;
-            }
-            .contact-info .label {
-                min-width: 60px;
-            }
-            .gallery-prev {
-                left: 10px;
-            }
-            .gallery-next {
-                right: 10px;
-            }
-            .breadcrumb {
-                font-size: 12px;
-                padding: 0 16px;
-            }
+            /* 导航栏改为：汉堡靠左，左右信息分占两侧，Logo 和导航独占一行居中 */
+            .top-bar { flex-wrap: wrap; padding: 6px 16px; min-height: 56px; align-items: center; gap: 6px; }
+            .hamburger { display: flex; order: 0; flex-shrink: 0; padding: 4px 6px; margin-right: 8px; }
+            .top-left { flex: 1; order: 1; height: auto; padding: 0; justify-content: flex-start; font-size: 12px; gap: 4px; white-space: nowrap; letter-spacing: 0; }
+            .top-left .icon { font-size: 16px; }
+            .top-right { flex: 1; order: 2; height: auto; padding: 0; justify-content: flex-end; font-size: 12px; gap: 4px; white-space: nowrap; letter-spacing: 0; }
+            .top-right .icon { font-size: 16px; }
+            .top-center { flex: 1 1 100%; order: 3; margin: 4px 0 6px 0; gap: 2px; }
+            .logo-img { height: 70px; width: auto; max-width: 100px; }
+            .nav-links { display: flex; flex-direction: column; gap: 6px; width: 100%; max-height: 0; overflow: hidden; opacity: 0; padding-top: 0; transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s; order: 4; flex-basis: 100%; border-top: 1px solid rgba(0, 0, 0, 0.05); margin-top: 6px; }
+            .nav-links.open { max-height: 400px; opacity: 1; padding-top: 12px; }
+            .nav-links a { font-size: 16px; text-align: center; padding: 8px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.03); }
+            .nav-links a:last-child { border-bottom: none; }
+            .nav-links a::after { display: none; }
+            .breadcrumb { font-size: 12px; padding: 0 16px; }
+            .hero { margin: 20px 16px 0; min-height: 40vh; border-radius: 24px; padding: 30px 16px; }
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 16px; padding: 8px 18px; }
+            .services, .factory-preview { padding: 30px 20px; margin: 20px 16px; border-radius: 24px; }
+            .services h2, .factory-preview h2 { font-size: 28px; }
+            .card-grid { grid-template-columns: 1fr; gap: 24px; }
+            .image-row { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .image-row img { height: 220px; }
+            .contact-container { grid-template-columns: 1fr; gap: 30px; text-align: left; }
+            /* ★★★ 修正：取消名片图片在前，让它显示在文字下方 ★★★ */
+            .contact-image { order: 0; }
+            .contact-image img { max-width: 85%; margin: 0 auto; }
+            .contact-section { padding: 40px 20px 30px; }
+            .contact-info p { flex-wrap: wrap; gap: 6px; }
+            .contact-info .label { min-width: 60px; }
+            .gallery-prev { left: 10px; }
+            .gallery-next { right: 10px; }
         }
 
         @media (max-width: 480px) {
-            .top-left,
-            .top-right {
-                font-size: 12px;
-            }
-            .top-left .icon,
-            .top-right .icon {
-                font-size: 14px;
-            }
-
-            .logo-img {
-                height: 80px;
-                max-width: 100px;
-            }
-
-            .hamburger span {
-                width: 22px;
-                height: 2.5px;
-            }
-            .nav-links a {
-                font-size: 16px;
-            }
-
-            .hero {
-                margin: 16px 12px 0;
-                min-height: 35vh;
-                border-radius: 20px;
-                padding: 24px 12px;
-            }
-            .hero h1 {
-                font-size: 24px;
-            }
-            .hero p {
-                font-size: 14px;
-                padding: 6px 14px;
-            }
-
-            .services,
-            .factory-preview {
-                padding: 24px 16px;
-                margin: 16px 12px;
-                border-radius: 20px;
-            }
-            .services h2,
-            .factory-preview h2 {
-                font-size: 24px;
-            }
-            .btn {
-                padding: 10px 24px;
-                font-size: 14px;
-            }
-
-            .image-row {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .image-row img {
-                height: 160px;
-            }
-
-            .contact-image img {
-                max-width: 95%;
-            }
+            .top-left, .top-right { font-size: 11px; }
+            .top-left .icon, .top-right .icon { font-size: 14px; }
+            .logo-img { height: 60px; max-width: 80px; }
+            .hamburger span { width: 20px; height: 2.5px; }
+            .nav-links a { font-size: 15px; }
+            .hero { margin: 16px 12px 0; min-height: 35vh; border-radius: 20px; padding: 24px 12px; }
+            .hero h1 { font-size: 24px; }
+            .hero p { font-size: 14px; padding: 6px 14px; }
+            .services, .factory-preview { padding: 24px 16px; margin: 16px 12px; border-radius: 20px; }
+            .services h2, .factory-preview h2 { font-size: 24px; }
+            .btn { padding: 10px 24px; font-size: 14px; }
+            .image-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .image-row img { height: 160px; }
+            .contact-image img { max-width: 95%; }
         }
-
-        /* 极端小屏 */
         @media (max-width: 360px) {
-            .top-left,
-            .top-right {
-                font-size: 10px;
-            }
-            .logo-img {
-                height: 70px;
-                max-width: 80px;
-            }
-            .image-row {
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
-            }
-            .image-row img {
-                height: 120px;
-            }
-            .contact-image img {
-                max-width: 100%;
-            }
+            .top-left, .top-right { font-size: 10px; }
+            .logo-img { height: 50px; max-width: 60px; }
+            .image-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .image-row img { height: 120px; }
+            .contact-image img { max-width: 100%; }
         }
     </style>
 </head>
 <body>
-
-    <!-- ============================================================
-    导航栏（三栏布局 + 汉堡菜单）
-    ============================================================ -->
+    <!-- ============================================================ 导航栏 ============================================================ -->
     <header class="top-bar">
-        <!-- 汉堡按钮（仅移动端显示） -->
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <!-- 左栏：WhatsApp -->
-        <div class="top-left">
-            <span class="icon">💬</span>
-            <span class="highlight">WhatsApp</span>: +86 18022868694
-        </div>
-
-        <!-- 中栏：Logo + 导航 -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+        <div class="top-left"><span class="icon">💬</span><span class="highlight">WhatsApp</span>: +86 18022868694</div>
         <div class="top-center">
-            <img src="images_webp/LOGO.webp" alt="SKMEI Logo" class="logo-img" />
+            <img src="images_webp/LOGO.webp" alt="SKMEI Watch Manufacturer Logo" class="logo-img" />
             <nav class="nav-links" id="navLinks">
                 <a href="index.html" class="active">Home</a>
                 <a href="products.html">Products</a>
                 <a href="about.html">About</a>
             </nav>
         </div>
-
-        <!-- 右栏：Email -->
-        <div class="top-right">
-            <span class="icon">📧</span>
-            <span class="highlight">Email</span>: bk03@skmei.com
-        </div>
+        <div class="top-right"><span class="icon">📧</span><span class="highlight">Email</span>: bk03@skmei.com</div>
     </header>
 
     <!-- ★ 面包屑 -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol>
-            <li><a href="https://www.skmeiglobal.com/">Home</a></li>
-            <li>›</li>
-            <li>Watch Manufacturer</li>
-        </ol>
-    </nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="https://www.skmeiglobal.com/">Home</a></li><li>›</li><li>Watch Manufacturer</li></ol></nav>
 
-    <!-- ============================================================
-    Banner
-    ============================================================ -->
+    <!-- ============================================================ Banner ============================================================ -->
     <section class="hero">
         <h1>Welcome to <span>SKMEI</span> Manufacturing<span> Factory</span></h1>
         <p>Stable supply chain · Good Quality · Better Service · Free Design</p>
     </section>
 
-    <!-- ============================================================
-    服务卡片
-    ============================================================ -->
+    <!-- ============================================================ 服务卡片 ============================================================ -->
     <section class="services" id="services">
         <h2>Our Services</h2>
         <div class="card-grid">
-            <div class="card">
-                <div class="icon">📦</div>
-                <h3>Wholesale Service</h3>
-                <p>Bulk orders with competitive pricing. Fast delivery and reliable quality assurance for global partners.</p>
-                <a href="products.html?service=wholesale" class="btn">Learn More →</a>
-            </div>
-            <div class="card">
-                <div class="icon">🔧</div>
-                <h3>Custom Service</h3>
-                <p>Tailor-made solutions for your specific needs. From design to production, we deliver excellence.</p>
-                <a href="products.html?service=custom" class="btn">Learn More →</a>
-            </div>
+            <div class="card"><div class="icon">📦</div><h3>Wholesale Service</h3><p>Bulk orders with competitive pricing. Fast delivery and reliable quality assurance for global partners.</p><a href="products.html?service=wholesale" class="btn">Learn More →</a></div>
+            <div class="card"><div class="icon">🔧</div><h3>Custom Service</h3><p>Tailor-made solutions for your specific needs. From design to production, we deliver excellence.</p><a href="products.html?service=custom" class="btn">Learn More →</a></div>
         </div>
     </section>
 
-    <!-- ============================================================
-    工厂预览（所有图片均已加入画廊，点击可左右翻动）
-    ============================================================ -->
+    <!-- ============================================================ 工厂预览 ============================================================ -->
     <section class="factory-preview">
         <h2>Factory Tour &amp; Certificates</h2>
-
         <div class="row-title">🏅 Certificates</div>
         <div class="image-row">
-            <img loading="lazy" src="images_webp/index/BSCI.webp" alt="SKMEI BSCI certificate for factory social compliance" title="BSCI certification of SKMEI watch factory" onclick="openGallery(0)" />
-            <img loading="lazy" src="images_webp/index/CE1.webp" alt="SKMEI CE certificate for product safety compliance" title="CE certification of SKMEI watches" onclick="openGallery(1)" />
-            <img loading="lazy" src="images_webp/index/CE2.webp" alt="SKMEI CE certificate for electronic watch safety" title="CE certification for SKMEI smart watches" onclick="openGallery(2)" />
-            <img loading="lazy" src="images_webp/index/ISO.webp" alt="SKMEI ISO9001 quality management system certificate" title="ISO9001 certification of SKMEI factory" onclick="openGallery(3)" />
+            <img loading="lazy" src="images_webp/index/BSCI.webp" alt="SKMEI BSCI certificate" onclick="openGallery(0)" />
+            <img loading="lazy" src="images_webp/index/CE1.webp" alt="SKMEI CE certificate" onclick="openGallery(1)" />
+            <img loading="lazy" src="images_webp/index/CE2.webp" alt="SKMEI CE certificate" onclick="openGallery(2)" />
+            <img loading="lazy" src="images_webp/index/ISO.webp" alt="SKMEI ISO certificate" onclick="openGallery(3)" />
         </div>
-
         <div class="row-title">🌍 Global Customers</div>
         <div class="image-row">
-            <img loading="lazy" src="images_webp/index/factory 1.webp" alt="SKMEI factory production line with workers assembling watches" title="SKMEI watch assembly line" onclick="openGallery(4)" />
-            <img loading="lazy" src="images_webp/index/factory 2.webp" alt="SKMEI factory workshop with quality control inspection" title="SKMEI quality control process" onclick="openGallery(5)" />
-            <img loading="lazy" src="images_webp/index/factory 3.webp" alt="SKMEI watch factory warehouse with finished products" title="SKMEI finished watch warehouse" onclick="openGallery(6)" />
-            <img loading="lazy" src="images_webp/index/factory 4.webp" alt="SKMEI watch packaging and shipping process" title="SKMEI packaging and shipping" onclick="openGallery(7)" />
+            <img loading="lazy" src="images_webp/index/factory 1.webp" alt="Assembly line" onclick="openGallery(4)" />
+            <img loading="lazy" src="images_webp/index/factory 2.webp" alt="Quality control" onclick="openGallery(5)" />
+            <img loading="lazy" src="images_webp/index/factory 3.webp" alt="Warehouse" onclick="openGallery(6)" />
+            <img loading="lazy" src="images_webp/index/factory 4.webp" alt="Packaging" onclick="openGallery(7)" />
         </div>
-
-        <div class="btn-wrapper">
-            <a href="about.html#gallery" class="btn">View More Factory Photos →</a>
-        </div>
+        <div class="btn-wrapper"><a href="about.html#gallery" class="btn">View More Factory Photos →</a></div>
     </section>
 
-    <!-- ============================================================
-    联系方式（文字左 + 图片右）
-    ============================================================ -->
+    <!-- ============================================================ 联系方式 ============================================================ -->
     <section class="contact-section" id="contact">
         <div class="contact-container">
-            <!-- 左侧文字 -->
             <div class="contact-info">
                 <h3>📍 Contact &amp; Address</h3>
                 <p><span class="label">Address</span> <span>Block C6 Wanyang Zhongchuang Industrial Park, 41 Dawang Road, Zhaoqing High-tech Zone, Sihui City, Guangdong Province, China</span></p>
@@ -1107,17 +769,13 @@
                 <p><span class="label">Email</span> <span>bk03@skmei.com</span></p>
                 <p><span class="label">Hours</span> <span>Mon-Fri 08:20 - 17:20 (Chinese Time)</span></p>
             </div>
-
-            <!-- 右侧名片图片 -->
             <div class="contact-image">
-                <img loading="lazy" src="images_webp/contact-card.webp" alt="SKMEI business card with contact information" title="SKMEI business card" onclick="openGallery(8)" />
+                <img loading="lazy" src="images_webp/contact-card.webp" alt="SKMEI business card" onclick="openGallery(8)" />
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    模态框（左右翻动画廊）
-    ============================================================ -->
+    <!-- ============================================================ 模态框 ============================================================ -->
     <div class="modal-overlay" id="imageModal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation();">
             <button class="gallery-prev" onclick="changeGallery(-1)">❮</button>
@@ -1127,37 +785,24 @@
         </div>
     </div>
 
-    <!-- ============================================================
-    页脚
-    ============================================================ -->
-    <div class="footer-bottom">
-        &copy; 2026 <a href="#">SKMEI Brand</a> — All rights reserved.
-    </div>
+    <div class="footer-bottom">&copy; 2026 <a href="#">SKMEI Brand</a> — All rights reserved.</div>
 
-    <!-- ============================================================
-    汉堡菜单 & 模态框 JavaScript
-    ============================================================ -->
     <script>
-        // ============================================================
-        // 汉堡菜单控制
-        // ============================================================
+        // ========================= 汉堡菜单 =========================
         document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-
+            var hamburger = document.getElementById('hamburger');
+            var navLinks = document.getElementById('navLinks');
             hamburger.addEventListener('click', function(e) {
                 e.stopPropagation();
                 this.classList.toggle('active');
                 navLinks.classList.toggle('open');
             });
-
             navLinks.querySelectorAll('a').forEach(function(link) {
                 link.addEventListener('click', function() {
                     hamburger.classList.remove('active');
                     navLinks.classList.remove('open');
                 });
             });
-
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.top-bar')) {
                     hamburger.classList.remove('active');
@@ -1165,51 +810,18 @@
                 }
             });
         });
-
-        // ============================================================
-        // 画廊数据（9张）
-        // ============================================================
+        // ========================= 画廊数据（9张） =========================
         var galleryImages = [
-            "images_webp/index/BSCI.webp",
-            "images_webp/index/CE1.webp",
-            "images_webp/index/CE2.webp",
-            "images_webp/index/ISO.webp",
-            "images_webp/index/factory 1.webp",
-            "images_webp/index/factory 2.webp",
-            "images_webp/index/factory 3.webp",
-            "images_webp/index/factory 4.webp",
+            "images_webp/index/BSCI.webp", "images_webp/index/CE1.webp", "images_webp/index/CE2.webp", "images_webp/index/ISO.webp",
+            "images_webp/index/factory 1.webp", "images_webp/index/factory 2.webp", "images_webp/index/factory 3.webp", "images_webp/index/factory 4.webp",
             "images_webp/contact-card.webp"
         ];
         var currentGallery = 0;
-
-        function openGallery(index) {
-            currentGallery = index;
-            document.getElementById('modalImage').src = galleryImages[index];
-            document.getElementById('imageModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function changeGallery(step) {
-            currentGallery += step;
-            if (currentGallery < 0) currentGallery = galleryImages.length - 1;
-            if (currentGallery >= galleryImages.length) currentGallery = 0;
-            document.getElementById('modalImage').src = galleryImages[currentGallery];
-        }
-
-        function closeModal() {
-            document.getElementById('imageModal').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('imageModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight') changeGallery(1);
-            if (e.key === 'ArrowLeft') changeGallery(-1);
-            if (e.key === 'Escape') closeModal();
-        });
+        function openGallery(index) { currentGallery = index; document.getElementById('modalImage').src = galleryImages[index]; document.getElementById('imageModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function changeGallery(step) { currentGallery += step; if (currentGallery < 0) currentGallery = galleryImages.length - 1; if (currentGallery >= galleryImages.length) currentGallery = 0; document.getElementById('modalImage').src = galleryImages[currentGallery]; }
+        function closeModal() { document.getElementById('imageModal').classList.remove('active'); document.body.style.overflow = ''; }
+        document.getElementById('imageModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'ArrowRight') changeGallery(1); if (e.key === 'ArrowLeft') changeGallery(-1); if (e.key === 'Escape') closeModal(); });
     </script>
 </body>
 </html>
