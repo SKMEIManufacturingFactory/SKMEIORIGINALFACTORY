@@ -852,4 +852,783 @@
             'digital-ss': { prefix: 'M-DI-SS', color: '3498db', count: 0 },
             'digital-leather': { prefix: 'M-DI-LE', color: '3498db', count: 0 },
             'digital-silicone': { prefix: 'M-DI-SI', color: '3498db', count: 0 },
-            'digital-pu': { prefix: 'M-DI-PU', color
+            'digital-pu': { prefix: 'M-DI-PU', color: '3498db', count: 0 },
+            'dual-movement-ss': { prefix: 'M-MU-SS', color: '2ecc71', count: 0 },
+            'dual-movement-leather': { prefix: 'M-MU-LE', color: '2ecc71', count: 0 },
+            'dual-movement-silicone': { prefix: 'M-MU-SI', color: '2ecc71', count: 0 },
+            'dual-movement-pu': { prefix: 'M-MU-PU', color: '2ecc71', count: 0 },
+            'women-quartz-ss': { prefix: 'W-QT-SS', color: 'f1c40f', count: 0 },
+            'women-quartz-leather': { prefix: 'W-QT-LE', color: 'f1c40f', count: 0 },
+            'women-quartz-silicone': { prefix: 'W-QT-SI', color: 'f1c40f', count: 0 },
+            'women-quartz-pu': { prefix: 'W-QT-PU', color: 'f1c40f', count: 0 },
+            'Mechanical': { prefix: 'W-ME-SS', color: 'e74c3c', count: 0 },
+            'stainless': { prefix: 'SSW', color: '95a5a6', count: 0 },
+            'kids': { prefix: 'K-QT', color: '9b59b6', count: 0 },
+            'prayer': { prefix: 'PRAY', color: '1abc9c', count: 0 },
+            'couple': { prefix: 'CP', color: 'e84393', count: 0 },
+            'multi-function-barometer': { prefix: 'MF-BARO', color: 'e67e22', count: 0 },
+            'multi-function-compass': { prefix: 'MF-COMP', color: '27ae60', count: 0 },
+            'multi-function-pedometer': { prefix: 'MF-PEDO', color: '8e44ad', count: 0 },
+            'multi-function-solar': { prefix: 'MF-SOLAR', color: 'f39c12', count: 0 },
+            'multi-function-thermometer': { prefix: 'MF-THERMO', color: 'c0392b', count: 0 },
+            'Box': { prefix: 'BOX', color: 'e84393', count: 0 },
+        };
+
+        const productData = {};
+
+        const customNameMap = {
+            'men-quartz-ss': ['SKMEI 9410','SKMEI 9388','SKMEI 9393','SKMEI 9401','SKMEI 9418','SKMEI 2682','SKMEI 2679','SKMEI 9380','SKMEI 9387','SKMEI 9382','SKMEI 2660','SKMEI 9391','SKMEI 2657','SKMEI 2655','SKMEI 9386','SKMEI 9376','SKMEI 2656','SKMEI 9344','SKMEI 9394','SKMEI 2399','SKMEI 9335','SKMEI 2291','SKMEI 9332','SKMEI 2361','SKMEI 9356','SKMEI 1904','SKMEI 1990','SKMEI 1787','SKMEI 9309','SKMEI 9278','SKMEI 9354','SKMEI 9360','SKMEI 9331','SKMEI 9333','SKMEI 9337','SKMEI 2201','SKMEI 2293','SKMEI 9338','SKMEI 9348','SKMEI 9352','SKMEI 9346','SKMEI 2434','SKMEI 2413','SKMEI 9319','SKMEI 9325','SKMEI 9321','SKMEI 9193'],
+            'men-quartz-leather': ['SKMEI 9357','SKMEI 2333','SKMEI 1986','SKMEI 2490','SKMEI 9330','SKMEI 9305','SKMEI 2034','SKMEI 2339','SKMEI 9343','SKMEI 2575','SKMEI 9351','SKMEI 9340','SKMEI 9389','SKMEI 9390','SKMEI 2586','SKMEI 2512','SKMEI 2115','SKMEI 9336','SKMEI 9327','SKMEI 9322','SKMEI 9282','SKMEI 9298','SKMEI 9300','SKMEI 9236','SKMEI 9213'],
+            'men-quartz-silicone': ['SKMEI 9345','SKMEI 9363','SKMEI 9362','SKMEI 2305','SKMEI 9286','SKMEI 2359','SKMEI 2363','SKMEI 2329','SKMEI 9364','SKMEI 9329','SKMEI 9349','SKMEI 9365','SKMEI 2050','SKMEI 9341','SKMEI 9342','SKMEI 2362','SKMEI 2643','SKMEI 2606','SKMEI 2432','SKMEI 9379','SKMEI 2468','SKMEI 2501','SKMEI 2470','SKMEI 2533','SKMEI 9377','SKMEI 1902'],
+            'men-quartz-nylon': ['SKMEI 9392','SKMEI 9328','SKMEI 9381','SKMEI 2367','SKMEI 9315'],
+            'men-quartz-pu': ['SKMEI 2433','SKMEI 2730','SKMEI 2622','SKMEI 2108','SKMEI 2472','SKMEI 2469','SKMEI 2531','SKMEI 2535'],
+            'prayer': ['SKMEI 2591','SKMEI 2658','SKMEI 2753','SKMEI 2270','SKMEI 2194','SKMEI 2300','SKMEI 2330','SKMEI 2052','SKMEI 2092','SKMEI 2064','SKMEI 2141','SKMEI 2139','SKMEI 1680','SKMEI 1763','SKMEI 1815','SKMEI 1861','SKMEI 1981'],
+            'kids': ['SKMEI 2457','SKMEI 2430','SKMEI 2525','SKMEI 2646','SKMEI 2555','SKMEI 2573','SKMEI 1721','SKMEI 2151','SKMEI 2217','SKMEI 2153','SKMEI 2236','SKMEI 2326','SKMEI 2309','SKMEI 2280'],
+            'couple': ['SKMEI 9398','SKMEI 9369/9370','SKMEI 9268/9264','SKMEI 9058'],
+            'Box': ['BOXMA2','BOXPB1','BOXMA4','BOXPD1','BOXPF1','BOXPG1','BOXPA3','EGWD'],
+            'multi-function-barometer': ['SKMEI 1358','SKMEI 1418','SKMEI 1427'],
+            'multi-function-compass': ['SKMEI 1231','SKMEI 2077','SKMEI 2096','SKMEI 2147','SKMEI 2639','SKMEI 2620'],
+            'multi-function-pedometer': ['SKMEI 1888','SKMEI 2507'],
+            'multi-function-solar': ['SKMEI 2358','SKMEI 2712','SKMEI 2640','SKMEI 2715','SKMEI 1405'],
+            'multi-function-thermometer': ['SKMEI 1682','SKMEI 1681','SKMEI 2198'],
+            'women-quartz-ss': ['SKMEI 1897','SKMEI 2637','SKMEI 9405','SKMEI 2672','SKMEI 9408','SKMEI 9417','SKMEI 2628','SKMEI 9409','SKMEI 2566','SKMEI 2681','SKMEI 2670','SKMEI 2729','SKMEI 9367','SKMEI 2638','SKMEI 9416','SKMEI 2781','SKMEI 2718','SKMEI 2719','SKMEI 2547','SKMEI 2548','SKMEI 2582','SKMEI 2570','SKMEI 2578','SKMEI 2190','SKMEI 2292','SKMEI 2237','SKMEI 2315','SKMEI 2342','SKMEI 1805','SKMEI 1874','SKMEI 1979','SKMEI 1311','SKMEI 1390','SKMEI 1400','SKMEI 1528','SKMEI 1530','SKMEI 1410'],
+            'women-quartz-leather': ['SKMEI 2731','SKMEI 2732','SKMEI 2735','SKMEI 2568','SKMEI 2579','SKMEI 9384','SKMEI 2297','SKMEI 9279','SKMEI 9289'],
+            'women-quartz-silicone': ['SKMEI 2484','SKMEI 2528','SKMEI 2196','SKMEI 2089','SKMEI 2323','SKMEI 1747','SKMEI 2057'],
+            'women-quartz-pu': ['SKMEI 2642','SKMEI 2635','SKMEI 2177','SKMEI 1651'],
+            'Mechanical': ['SKMEI 9399','SKMEI 9404','SKMEI 9184','SKMEI 9194','SKMEI M029','SKMEI 9222','SKMEI 9271','SKMEI 9310','SKMEI M036','SKMEI M034','SKMEI M035','SKMEI 9378'],
+            'dual-movement-ss': ['SKMEI 1389','SKMEI 2229','SKMEI 1868','SKMEI 2621','SKMEI 2585','SKMEI 2703','SKMEI 2516','SKMEI 2505','SKMEI 2553','SKMEI 2417','SKMEI 2416','SKMEI 2556','SKMEI 2561','SKMEI 2445','SKMEI 2404','SKMEI 2459','SKMEI 2593','SKMEI 2571','SKMEI 2624','SKMEI 2310','SKMEI 1816','SKMEI 2632'],
+            'dual-movement-leather': ['SKMEI 2502','SKMEI 2518','SKMEI 2503','SKMEI 1652','SKMEI 1391','SKMEI 1584'],
+            'dual-movement-silicone': ['SKMEI 2243','SKMEI 2605','SKMEI 2471','SKMEI 2486','SKMEI 2418','SKMEI 2487','SKMEI 2588','SKMEI 2601','SKMEI 2602','SKMEI 2603','SKMEI 2328','SKMEI 2792','SKMEI 2411','SKMEI 2100','SKMEI 2202','SKMEI 2065'],
+            'dual-movement-pu': ['SKMEI 2226','SKMEI 1637','SKMEI 2213','SKMEI 1283','SKMEI 1818','SKMEI 1155b','SKMEI 2500','SKMEI 2354','SKMEI 2383','SKMEI 2808','SKMEI 2634','SKMEI 2604','SKMEI 2752','SKMEI 2583','SKMEI 2438','SKMEI 2401','SKMEI 2477','SKMEI 2530','SKMEI 2641','SKMEI 2220','SKMEI 1655','SKMEI 2119'],
+            'digital-ss': ['SKMEI 2651','SKMEI 2479','SKMEI 1812','SKMEI 1415','SKMEI 2610','SKMEI 1474','SKMEI 1448','SKMEI 1369','SKMEI 1381','SKMEI 1335','SKMEI 1328B','SKMEI 2597','SKMEI 1901','SKMEI 2353','SKMEI 2385','SKMEI 2451','SKMEI 2408','SKMEI 2242','SKMEI 1647','SKMEI 2387','SKMEI 2504','SKMEI 2659','SKMEI 2569','SKMEI 2480','SKMEI 2623','SKMEI 2581','SKMEI 2589','SKMEI 2611','SKMEI 2299','SKMEI 2653','SKMEI 2690','SKMEI 2335','SKMEI 2493','SKMEI 2446','SKMEI 2448','SKMEI 2478','SKMEI 2425','SKMEI 2521','SKMEI 2473','SKMEI 2465','SKMEI 2520','SKMEI 2460','SKMEI 2475','SKMEI 2550','SKMEI 2419','SKMEI 2366','SKMEI 2514','SKMEI 2204','SKMEI 2131','SKMEI 2285','SKMEI 2133','SKMEI 2338','SKMEI 2239','SKMEI 2004','SKMEI 2127','SKMEI 2259','SKMEI 2271','SKMEI 2145'],
+            'digital-leather': ['SKMEI 2595','SKMEI 2228','SKMEI 2241','SKMEI 1864'],
+            'digital-silicone': ['SKMEI 2697','SKMEI 1972','SKMEI 2787','SKMEI 2816','SKMEI 2669','SKMEI 2415','SKMEI 2421','SKMEI 2716','SKMEI 2391','SKMEI 2409','SKMEI 2592','SKMEI 2689','SKMEI 2618','SKMEI 2683','SKMEI 2540','SKMEI 2698','SKMEI 2437','SKMEI 2454','SKMEI 2537','SKMEI 2456','SKMEI 2400','SKMEI 2489','SKMEI 2488','SKMEI 2449','SKMEI 2481','SKMEI 2515','SKMEI 2325','SKMEI 2094','SKMEI 2485','SKMEI 2511','SKMEI 2513','SKMEI 2526','SKMEI 2558','SKMEI 2541','SKMEI 2617','SKMEI 2296','SKMEI 2264','SKMEI 2128'],
+            'digital-pu': ['SKMEI 1957','SKMEI 1872','SKMEI 1412','SKMEI 1413','SKMEI 1471','SKMEI 1496','SKMEI 1560','SKMEI 1623','SKMEI 1628','SKMEI 1965','SKMEI 1416','SKMEI 1426','SKMEI 1967','SKMEI 2345','SKMEI 2392','SKMEI 2322','SKMEI 2343','SKMEI 2218','SKMEI 2422','SKMEI 1968','SKMEI 1848','SKMEI 1906','SKMEI 2453','SKMEI 2337','SKMEI 2070','SKMEI 2497','SKMEI 2699','SKMEI 1894','SKMEI 2713','SKMEI 2636','SKMEI 2708','SKMEI 2691','SKMEI 2710','SKMEI 2440','SKMEI 2441','SKMEI 2428','SKMEI 2455','SKMEI 2510','SKMEI 2517','SKMEI 2543','SKMEI 2564','SKMEI 2565','SKMEI 2613','SKMEI 2661','SKMEI 2688','SKMEI 2647','SKMEI 2207','SKMEI 2189','SKMEI 2347','SKMEI 2304','SKMEI 2286','SKMEI 2000','SKMEI 2056','SKMEI 2208','SKMEI 2230','9952DSA'],
+            'stainless': ['SKMEI Q020','SKMEI Q2538/Q2539','2255AB','2255SA','1109SB','1114PA','1117PA','1118PA','1137PA','1138SA','1141SB','1143PA','1145PA','1146SB','1121SA','1222SA','1248PA','1250SA','1251PA','1295SA','1299PA','1312SA','1313SA','1314SA','1323SA','1324SA','1325SA','1326SA','1339SA','1343SA','1345SA','1346SA','1351SA','1359PA','2115SA','2192','2227SA','2250SA','2256PA','2283PA','2284AA','2285BA','2288AA','2304AA','7021SA','9009SA','9010AA','9011SA','9012SB','9019AA','9020SA','9022AA','9024SA','9013SA','9033SA','9035SA','9051SA','9052SA','9809AA','9952SA','98050','DM770SWA','DM771SWB','DM778SWA','DM8525WA','DM859PWA','DM852SWC'],
+        };
+
+        Object.keys(categories).forEach(key => {
+            const cfg = categories[key];
+            const prefix = cfg.prefix;
+            const baseColor = cfg.color;
+            const defaultCount = cfg.count || 8;
+            const customNames = customNameMap[key] || [];
+            const count = customNames.length > 0 ? customNames.length : defaultCount;
+            const colors = [baseColor, ...COLOR_SET.filter(c => c !== baseColor).slice(0, 3)];
+            while (colors.length < 4) colors.push('cccccc');
+            productData[key] = Array.from({ length: count }, (_, i) => {
+                const num = String(i + 1).padStart(2, '0');
+                const model = (customNames[i] !== undefined) ? customNames[i] : `${prefix}-${num}`;
+                const images = colors.map(col => getPlaceholder(col, model));
+                return { model, images };
+            });
+        });
+
+        // ========================= 图片路径覆盖 =========================
+        // 电子表钢带
+        if (productData['digital-ss']) {
+            const basePath = 'images_webp/products/digital-ss/';
+            productData['digital-ss'] = productData['digital-ss'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 12 || index === 27 || index === 29 || index === 30 || index === 48) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`] };
+                } else if (index === 3 || index === 5 || index === 7 || index === 8 || index === 9) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 电子表皮带
+        if (productData['digital-leather']) {
+            const basePath = 'images_webp/products/digital-leather/';
+            productData['digital-leather'] = productData['digital-leather'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+            });
+        }
+        // 电子表硅胶带
+        if (productData['digital-silicone']) {
+            const basePath = 'images_webp/products/digital-silicone/';
+            productData['digital-silicone'] = productData['digital-silicone'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 15) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 电子表pu带
+        if (productData['digital-pu']) {
+            const basePath = 'images_webp/products/digital-pu/';
+            productData['digital-pu'] = productData['digital-pu'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 2 || index === 3 || index === 4 || index === 10 || index === 11) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 双机芯钢带
+        if (productData['dual-movement-ss']) {
+            const basePath = 'images_webp/products/dual-movement-ss/';
+            productData['dual-movement-ss'] = productData['dual-movement-ss'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 0) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 双机芯皮带
+        if (productData['dual-movement-leather']) {
+            const basePath = 'images_webp/products/dual-movement-leather/';
+            productData['dual-movement-leather'] = productData['dual-movement-leather'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 4 || index === 5) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 双机芯硅胶带
+        if (productData['dual-movement-silicone']) {
+            const basePath = 'images_webp/products/dual-movement-silicone/';
+            productData['dual-movement-silicone'] = productData['dual-movement-silicone'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 5) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 双机芯pu带
+        if (productData['dual-movement-pu']) {
+            const basePath = 'images_webp/products/dual-movement-pu/';
+            productData['dual-movement-pu'] = productData['dual-movement-pu'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 3) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`] };
+                } else if (index === 5) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 钢表
+        if (productData['stainless']) {
+            const basePath = 'images_webp/products/stainless/';
+            productData['stainless'] = productData['stainless'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 0) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else if (index === 1) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`] };
+                }
+            });
+        }
+        // 机械表
+        if (productData['Mechanical']) {
+            const basePath = 'images_webp/products/Mechanical/';
+            productData['Mechanical'] = productData['Mechanical'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+            });
+        }
+        // 女石英钢带
+        if (productData['women-quartz-ss']) {
+            const basePath = 'images_webp/products/women-quartz-ss/';
+            productData['women-quartz-ss'] = productData['women-quartz-ss'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 31 || index === 32 || index === 33) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 女石英皮带
+        if (productData['women-quartz-leather']) {
+            const basePath = 'images_webp/products/women-quartz-leather/';
+            productData['women-quartz-leather'] = productData['women-quartz-leather'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 0 || index === 1) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 女石英硅胶带
+        if (productData['women-quartz-silicone']) {
+            const basePath = 'images_webp/products/women-quartz-silicone/';
+            productData['women-quartz-silicone'] = productData['women-quartz-silicone'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 4) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 女石英pu带
+        if (productData['women-quartz-pu']) {
+            const basePath = 'images_webp/products/women-quartz-pu/';
+            productData['women-quartz-pu'] = productData['women-quartz-pu'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+            });
+        }
+        // 多功能太阳能表
+        if (productData['multi-function-solar']) {
+            const basePath = 'images_webp/products/multi-function-solar/';
+            productData['multi-function-solar'] = productData['multi-function-solar'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 4) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 多功能计步表
+        if (productData['multi-function-pedometer']) {
+            const basePath = 'images_webp/products/multi-function-pedometer/';
+            productData['multi-function-pedometer'] = productData['multi-function-pedometer'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+            });
+        }
+        // 多功能温度表
+        if (productData['multi-function-thermometer']) {
+            const basePath = 'images_webp/products/multi-function-thermometer/';
+            productData['multi-function-thermometer'] = productData['multi-function-thermometer'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+            });
+        }
+        // 多功能气压表
+        if (productData['multi-function-barometer']) {
+            const basePath = 'images_webp/products/multi-function-barometer/';
+            productData['multi-function-barometer'] = productData['multi-function-barometer'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+            });
+        }
+        // 多功能指南表
+        if (productData['multi-function-compass']) {
+            const basePath = 'images_webp/products/multi-function-compass/';
+            productData['multi-function-compass'] = productData['multi-function-compass'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 0) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 盒子
+        if (productData['Box']) {
+            const basePath = 'images_webp/products/Box/';
+            productData['Box'] = productData['Box'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`] };
+            });
+        }
+        // 儿童表
+        if (productData['kids']) {
+            const basePath = 'images_webp/products/kids/';
+            productData['kids'] = productData['kids'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+            });
+        }
+        // 情侣表
+        if (productData['couple']) {
+            const basePath = 'images_webp/products/couple/';
+            productData['couple'] = productData['couple'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+            });
+        }
+        // 男士石英钢带
+        if (productData['men-quartz-ss']) {
+            const basePath = 'images_webp/products/men-quartz-ss/';
+            productData['men-quartz-ss'] = productData['men-quartz-ss'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 19 || index === 25 || index === 29 || index === 35 || index === 47) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+                if (index === 18 || index === 34) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 男士石英皮带
+        if (productData['men-quartz-leather']) {
+            const basePath = 'images_webp/products/men-quartz-leather/';
+            productData['men-quartz-leather'] = productData['men-quartz-leather'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 1) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 男士石英尼龙
+        if (productData['men-quartz-nylon']) {
+            const basePath = 'images_webp/products/men-quartz-nylon/';
+            productData['men-quartz-nylon'] = productData['men-quartz-nylon'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 0) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 男士石英pu带
+        if (productData['men-quartz-pu']) {
+            const basePath = 'images_webp/products/men-quartz-pu/';
+            productData['men-quartz-pu'] = productData['men-quartz-pu'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 0) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 男士石英硅胶带
+        if (productData['men-quartz-silicone']) {
+            const basePath = 'images_webp/products/men-quartz-silicone/';
+            productData['men-quartz-silicone'] = productData['men-quartz-silicone'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                if (index === 7) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+                if (index === 3) {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                } else {
+                    return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+                }
+            });
+        }
+        // 朝拜表
+        if (productData['prayer']) {
+            const basePath = 'images_webp/products/prayer/';
+            productData['prayer'] = productData['prayer'].map((item, index) => {
+                const num = String(index + 1).padStart(2, '0');
+                return { model: item.model, images: [`${basePath}${num}-1.webp`, `${basePath}${num}-2.webp`, `${basePath}${num}-3.webp`, `${basePath}${num}-4.webp`] };
+            });
+        }
+
+        // ========================= 父级分类映射 =========================
+        const parentCategories = {
+            'multi-function': ['multi-function-barometer', 'multi-function-compass', 'multi-function-pedometer', 'multi-function-solar', 'multi-function-thermometer'],
+            'men-quartz': ['men-quartz-ss', 'men-quartz-leather', 'men-quartz-silicone', 'men-quartz-nylon', 'men-quartz-pu'],
+            'women-quartz': ['women-quartz-ss', 'women-quartz-leather', 'women-quartz-silicone', 'women-quartz-pu'],
+            'digital': ['digital-ss', 'digital-leather', 'digital-silicone', 'digital-pu'],
+            'dual-movement': ['dual-movement-ss', 'dual-movement-leather', 'dual-movement-silicone', 'dual-movement-pu'],
+            'stainless': ['stainless'],
+        };
+
+        const allProducts = Object.values(productData).flatMap(arr => arr);
+        let currentCategory = 'all';
+        let currentService = null;
+
+        // ========================= 分批加载全局变量 =========================
+        let currentLoadStep = 60;
+        let currentLoadLimit = 60;
+
+        const grid = document.getElementById('productGrid');
+        const categoryTitle = document.getElementById('categoryTitle');
+        const serviceInfo = document.getElementById('serviceInfo');
+        const serviceTitle = document.getElementById('serviceTitle');
+        const serviceDesc = document.getElementById('serviceDesc');
+        const customFeatures = document.getElementById('customFeatures');
+        const wholesaleFeatures = document.getElementById('wholesaleFeatures');
+        const customNotice = document.getElementById('customNotice');
+        const customImageGallery = document.getElementById('customImageGallery');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+
+        function isCategoryFiltered(categoryKey) {
+            if (!currentService) return false;
+            if (currentService === 'wholesale') {
+                if (categoryKey.startsWith('stainless')) return true;
+                if (categoryKey === 'stainless') return true;
+                return false;
+            }
+            if (currentService === 'custom') {
+                if (categoryKey.startsWith('multi-function')) return true;
+                if (categoryKey === 'multi-function') return true;
+                return false;
+            }
+            return false;
+        }
+
+        function getHiddenCategoryKeys() {
+            if (!currentService) return [];
+            if (currentService === 'wholesale') {
+                return ['stainless'];
+            }
+            if (currentService === 'custom') {
+                return ['multi-function', 'multi-function-barometer', 'multi-function-compass', 'multi-function-pedometer', 'multi-function-solar', 'multi-function-thermometer'];
+            }
+            return [];
+        }
+
+        // ========================= 模态框 =========================
+        var modalImages = [];
+        var modalCurrentIndex = 0;
+
+        function openModal(imgSrc, productItem) {
+            if (!imgSrc) return;
+            if (productItem) {
+                try {
+                    modalImages = JSON.parse(productItem.dataset.images);
+                } catch (e) {
+                    modalImages = [imgSrc];
+                }
+                modalCurrentIndex = modalImages.indexOf(imgSrc);
+                if (modalCurrentIndex === -1) modalCurrentIndex = 0;
+            } else {
+                modalImages = [imgSrc];
+                modalCurrentIndex = 0;
+            }
+            document.getElementById('modalImage').src = imgSrc;
+            document.getElementById('imageModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function changeModalImage(step) {
+            if (modalImages.length <= 1) return;
+            modalCurrentIndex += step;
+            if (modalCurrentIndex < 0) modalCurrentIndex = modalImages.length - 1;
+            if (modalCurrentIndex >= modalImages.length) modalCurrentIndex = 0;
+            document.getElementById('modalImage').src = modalImages[modalCurrentIndex];
+        }
+
+        function closeModal(e) {
+            if (e && e.target !== e.currentTarget && !e.target.classList.contains('close-btn')) return;
+            document.getElementById('imageModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // ========================= 产品卡片翻动 =========================
+        function changeProductImage(btn, direction) {
+            const productItem = btn.closest('.product-item');
+            if (!productItem) return;
+            let images;
+            try { images = JSON.parse(productItem.dataset.images); } catch (e) { return; }
+            if (!images || images.length <= 1) return;
+            const mainImg = productItem.querySelector('.main-image img');
+            let currentIndex = parseInt(productItem.dataset.currentIndex) || 0;
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            mainImg.src = images[currentIndex];
+            productItem.dataset.currentIndex = currentIndex;
+            const thumbs = productItem.querySelectorAll('.thumb');
+            thumbs.forEach((thumb, idx) => {
+                if (idx === currentIndex) thumb.classList.add('active');
+                else thumb.classList.remove('active');
+            });
+        }
+
+        // ========================= 清除服务状态 =========================
+        function clearServiceState() {
+            if (currentService) {
+                currentService = null;
+                serviceInfo.classList.remove('show');
+                customFeatures.style.display = 'none';
+                wholesaleFeatures.style.display = 'none';
+                customNotice.classList.remove('show');
+                if (customImageGallery) customImageGallery.classList.remove('show');
+                document.querySelectorAll('[data-service-hide]').forEach(el => {
+                    el.style.display = '';
+                });
+            }
+        }
+
+        // ========================= 核心渲染（支持分批加载） =========================
+        function renderProducts(categoryKey, shouldScroll, isLoadMore = false) {
+            let products = [];
+            let title = '';
+
+            if (categoryKey === 'all') {
+                const hiddenKeys = getHiddenCategoryKeys();
+                products = allProducts.filter(p => {
+                    for (const key in productData) {
+                        if (productData[key].includes(p)) {
+                            return !hiddenKeys.includes(key);
+                        }
+                    }
+                    return true;
+                });
+                title = 'All Types';
+            } else if (productData[categoryKey]) {
+                const whitelist = customNameMap[categoryKey] || [];
+                if (whitelist.length > 0) {
+                    products = productData[categoryKey].filter(item => whitelist.includes(item.model));
+                } else {
+                    products = [];
+                }
+
+                let parts = categoryKey.split('-');
+                if (categoryKey.startsWith('multi-function')) {
+                    const firstPart = parts[0] + '-' + parts[1];
+                    const restParts = parts.slice(2);
+                    parts = [firstPart, ...restParts];
+                }
+                const map = {
+                    'stainless': 'Stainless Steel',
+                    'couple': 'Couple',
+                    'multi-function': 'Multi-function',
+                    'dual-movement': 'Dual-movement',
+                    'digital': 'Digital',
+                    'Mechanical': 'Mechanical',
+                    'men-quartz': "Men's Quartz",
+                    'women-quartz': "Women's Quartz",
+                    'kids': 'Kids',
+                    'prayer': 'Prayer',
+                    'digital-ss': 'Stainless Steel Band',
+                    'digital-leather': 'Leather Strap',
+                    'digital-silicone': 'Silicone Strap',
+                    'digital-pu': 'PU Strap',
+                    'dual-movement-ss': 'Stainless Steel Band',
+                    'dual-movement-leather': 'Leather Strap',
+                    'dual-movement-silicone': 'Silicone Strap',
+                    'dual-movement-pu': 'PU Strap',
+                    'ss': 'Stainless Steel Band',
+                    'leather': 'Leather Strap',
+                    'silicone': 'Silicone Strap',
+                    'nylon': 'Nylon Strap',
+                    'pu': 'PU Strap',
+                    'barometer': 'Barometer',
+                    'compass': 'Compass',
+                    'pedometer': 'Pedometer',
+                    'solar': 'Solar',
+                    'thermometer': 'Thermometer',
+                };
+                title = parts.map(p => map[p] || p).join(' / ');
+            } else if (parentCategories[categoryKey]) {
+                const childKeys = parentCategories[categoryKey];
+                products = childKeys.flatMap(k => {
+                    if (isCategoryFiltered(k)) return [];
+                    const subData = productData[k] || [];
+                    const whitelist = customNameMap[k] || [];
+                    if (whitelist.length > 0) {
+                        return subData.filter(item => whitelist.includes(item.model));
+                    }
+                    return subData;
+                });
+                const map = {
+                    'stainless': 'Stainless Steel Watches',
+                    'couple': 'Couple Watches',
+                    'multi-function': 'Multi-function Watches',
+                    'digital': 'Digital Watches',
+                    'Mechanical': 'Mechanical Watches',
+                    'dual-movement': 'Dual-movement Watches',
+                    'men-quartz': "Men's Quartz Watches",
+                    'women-quartz': "Women's Quartz Watches",
+                    'kids': "Kids' Watches",
+                };
+                title = map[categoryKey] || categoryKey;
+            } else {
+                products = [];
+                title = 'No products';
+            }
+
+            categoryTitle.textContent = title;
+
+            if (products.length === 0) {
+                grid.innerHTML = '<div class="no-products">No products found in this category.</div>';
+                return;
+            }
+
+            // ★★★ 分批加载核心逻辑 ★★★
+            if (!isLoadMore) {
+                currentLoadLimit = currentLoadStep;
+            } else {
+                currentLoadLimit += currentLoadStep;
+            }
+
+            let displayProducts = products.slice(0, currentLoadLimit);
+            let hasMore = products.length > currentLoadLimit;
+
+            let html = '';
+            displayProducts.forEach((p) => {
+                const mainImg = p.images[0];
+                const thumbs = p.images.slice(1);
+                const thumbsHtml = thumbs.length > 0 ? `
+                    <div class="thumbnails">
+                        ${thumbs.map((src, idx) => `
+                            <div class="thumb ${idx === 0 ? 'active' : ''}" data-src="${src}">
+                                <img loading="lazy" src="${src}" alt="color ${idx+1}" 
+                                     onerror="this.parentElement.style.display='none'" />
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : '';
+
+                html += `
+                    <div class="product-item" data-images='${JSON.stringify(p.images)}' data-current-index="0">
+                        <div class="image-container">
+                            <button class="arrow-btn left-arrow" onclick="changeProductImage(this, -1)">❮</button>
+                            <div class="main-image">
+                                <img loading="lazy" src="${mainImg}" alt="${p.model}" />
+                            </div>
+                            <button class="arrow-btn right-arrow" onclick="changeProductImage(this, 1)">❯</button>
+                        </div>
+                        ${thumbsHtml}
+                        <div class="product-name">${p.model}</div>
+                    </div>
+                `;
+            });
+
+            if (!isLoadMore) {
+                grid.innerHTML = html;
+            } else {
+                grid.insertAdjacentHTML('beforeend', html);
+            }
+
+            // 动态更新 "Load More" 按钮
+            let oldBtnWrapper = document.getElementById('loadMoreBtnWrapper');
+            if (oldBtnWrapper) oldBtnWrapper.remove();
+
+            if (hasMore) {
+                let btnWrapper = document.createElement('div');
+                btnWrapper.id = 'loadMoreBtnWrapper';
+                btnWrapper.style.cssText = 'text-align: center; margin: 30px 0 10px 0;';
+                btnWrapper.innerHTML = `<button class="btn" id="loadMoreBtn" style="cursor:pointer;">Load More Products (${displayProducts.length} / ${products.length})</button>`;
+                grid.parentElement.appendChild(btnWrapper);
+
+                document.getElementById('loadMoreBtn').addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.textContent = 'Loading...';
+                    this.disabled = true;
+                    renderProducts(categoryKey, false, true);
+                });
+            }
+
+            if (shouldScroll) {
+                const displayEl = document.getElementById('productDisplay');
+                if (displayEl) {
+                    const topOffset = displayEl.getBoundingClientRect().top + window.pageYOffset - 150;
+                    window.scrollTo({ top: topOffset, behavior: 'smooth' });
+                }
+            }
+
+            document.querySelectorAll('.product-item').forEach(item => {
+                const mainImg = item.querySelector('.main-image img');
+                const thumbs = item.querySelectorAll('.thumb');
+                const defaultImg = mainImg.src;
+
+                thumbs.forEach(thumb => {
+                    thumb.addEventListener('mouseenter', function() {
+                        const src = this.dataset.src;
+                        mainImg.src = src;
+                        thumbs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                        const images = JSON.parse(item.dataset.images);
+                        const index = images.indexOf(src);
+                        if (index !== -1) item.dataset.currentIndex = index;
+                    });
+                    thumb.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const src = this.dataset.src;
+                        openModal(src, this.closest('.product-item'));
+                    });
+                });
+
+                const mainImageContainer = item.querySelector('.main-image');
+                mainImageContainer.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const currentSrc = mainImg.src;
+                    if (currentSrc === defaultImg) {
+                        openModal(currentSrc, this.closest('.product-item'));
+                    }
+                });
+
+                item.addEventListener('mouseleave', function() {
+                    mainImg.src = defaultImg;
+                    thumbs.forEach(t => t.classList.remove('active'));
+                    item.dataset.currentIndex = 0;
+                });
+            });
+        }
+
+        // ========================= 导航过滤 =========================
+        function filterProducts(categoryKey, element, event) {
+            if (event) event.stopPropagation();
+            clearServiceState();
+
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            if (element) element.classList.add('active');
+            currentCategory = categoryKey;
+            renderProducts(categoryKey, true);
+        }
+
+        function toggleChildren(event, iconElement) {
+            event.stopPropagation();
+            const parentLi = iconElement.closest('li');
+            const childrenUl = parentLi.querySelector(':scope > .nav-children');
+            if (!childrenUl) return;
+            childrenUl.classList.toggle('open');
+            iconElement.classList.toggle('collapsed');
+        }
+
+        // ========================= 初始化 =========================
+        function init() {
+            const params = new URLSearchParams(window.location.search);
+            const service = params.get('service');
+            currentService = service;
+
+            document.querySelectorAll('[data-service-hide]').forEach(el => {
+                const hideFor = el.dataset.serviceHide;
+                el.style.display = (service === hideFor) ? 'none' : '';
+            });
+
+            if (customFeatures) customFeatures.style.display = 'none';
+            if (wholesaleFeatures) wholesaleFeatures.style.display = 'none';
+            if (customNotice) customNotice.classList.remove('show');
+            if (customImageGallery) customImageGallery.classList.remove('show');
+
+            if (service === 'wholesale') {
+                serviceInfo.classList.add('show');
+                serviceTitle.textContent = '📦 Wholesale Service';
+                serviceDesc.textContent = 'We offer competitive wholesale prices for bulk orders. Our products are available in large quantities with flexible packaging options. Contact us for a wholesale quote.';
+                if (wholesaleFeatures) wholesaleFeatures.style.display = 'block';
+            } else if (service === 'custom') {
+                serviceInfo.classList.add('show');
+                serviceTitle.textContent = '🔧 Custom Service';
+                serviceDesc.textContent = 'Need a unique design? Our custom service can create watches tailored to your specifications—from dial design to strap material and movement options. Start your project today.';
+                if (customFeatures) customFeatures.style.display = 'block';
+                if (customNotice) customNotice.classList.add('show');
+                if (customImageGallery) customImageGallery.classList.add('show');
+            } else {
+                serviceInfo.classList.remove('show');
+            }
+
+            const allItem = document.querySelector('.nav-item[data-category="all"]');
+            if (allItem) allItem.classList.add('active');
+            renderProducts('all', false);
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
