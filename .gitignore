@@ -1,1 +1,6 @@
+# 不上传整个 images 文件夹
 images/
+
+# 系统文件
+.DS_Store
+Thumbs.db
