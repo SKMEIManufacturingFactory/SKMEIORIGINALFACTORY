@@ -367,10 +367,18 @@
             margin-bottom: 12px;
             display: inline-block;
             background: #f8f9fa;
-            padding: 16px;
+            padding: 20px; /* ★★★ 稍微调大了外圈的填充，让图片更透气 ★★★ */
             border-radius: 50%;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
             transition: transform 0.3s;
+        }
+        /* ★★★ 将 icon 容器里的图片大大放大 ★★★ */
+        .card .icon img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
         }
         .card:hover .icon { transform: scale(1.08); }
         .card h3 {
@@ -733,8 +741,23 @@
     <section class="services" id="services">
         <h2>Our Services</h2>
         <div class="card-grid">
-            <div class="card"><div class="icon">📦</div><h3>Wholesale Service</h3><p>Bulk orders with competitive pricing. Fast delivery and reliable quality assurance for global partners.</p><a href="products.html?service=wholesale" class="btn">Learn More →</a></div>
-            <div class="card"><div class="icon">🔧</div><h3>Custom Service</h3><p>Tailor-made solutions for your specific needs. From design to production, we deliver excellence.</p><a href="products.html?service=custom" class="btn">Learn More →</a></div>
+            <!-- ★★★ 图片已在 CSS 中放大 ★★★ -->
+            <div class="card">
+                <div class="icon">
+                    <img src="images_webp/about/warehouse4.webp" alt="Wholesale Service Icon" />
+                </div>
+                <h3>Wholesale Service</h3>
+                <p>Bulk orders with competitive pricing. Fast delivery and reliable quality assurance for global partners.</p>
+                <a href="products.html?service=wholesale" class="btn">Learn More →</a>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <img src="images_webp/products/custom pic/custom2.webp" alt="Custom Service Icon" />
+                </div>
+                <h3>Custom Service</h3>
+                <p>Tailor-made solutions for your specific needs. From design to production, we deliver excellence.</p>
+                <a href="products.html?service=custom" class="btn">Learn More →</a>
+            </div>
         </div>
     </section>
 
