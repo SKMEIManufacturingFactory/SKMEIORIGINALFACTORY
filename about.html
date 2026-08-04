@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-EN">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
@@ -35,6 +35,9 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="About SKMEI – Professional Watch Factory" />
     <meta name="twitter:description" content="Leading watch manufacturer in China with 13,000 sqm factory, OEM/ODM services." />
+
+    <!-- ★ 性能优化：提前预加载首屏最关键的大图 -->
+    <link rel="preload" href="images_webp/about/outside.webp" as="image" fetchpriority="high">
 
     <!-- ★ FAQ 结构化数据（原有，保留并优化） -->
     <script type="application/ld+json">
@@ -796,10 +799,11 @@
     <!-- ========================= ABOUT INTRO ========================= -->
     <section class="about-intro">
         <div class="photo-column">
+            <!-- ★★★ 优化：删除了第一张首屏图的 loading="lazy" ★★★ -->
             <div class="photo-item" onclick="openGallery(0)">
                 <picture>
                     <source srcset="images_webp/about/outside.webp" type="image/webp" />
-                    <img src="images_webp/about/outside.webp" alt="SKMEI watch factory exterior building with modern architecture" title="SKMEI professional watch factory exterior" loading="lazy" decoding="async" />
+                    <img src="images_webp/about/outside.webp" alt="SKMEI watch factory exterior building with modern architecture" title="SKMEI professional watch factory exterior" decoding="async" />
                 </picture>
             </div>
             <div class="photo-item" onclick="openGallery(1)">
@@ -815,9 +819,10 @@
                 </picture>
             </div>
             <div class="photo-item" onclick="openGallery(3)">
+                <!-- ★★★ 修复：将图片文件名从 Sample hourse.webp 改为 Sample-hourse.webp ★★★ -->
                 <picture>
-                    <source srcset="images_webp/about/Sample hourse.webp" type="image/webp" />
-                    <img src="images_webp/about/Sample hourse.webp" alt="SKMEI watch sample showroom with various watch collections" title="SKMEI watch sample house display" loading="lazy" decoding="async" />
+                    <source srcset="images_webp/about/Sample-hourse.webp" type="image/webp" />
+                    <img src="images_webp/about/Sample-hourse.webp" alt="SKMEI watch sample showroom with various watch collections" title="SKMEI watch sample house display" loading="lazy" decoding="async" />
                 </picture>
             </div>
         </div>
@@ -1036,7 +1041,7 @@
             "images_webp/about/outside.webp",
             "images_webp/about/people.webp",
             "images_webp/about/saler.webp",
-            "images_webp/about/Sample hourse.webp",
+            "images_webp/about/Sample-hourse.webp",
             "images_webp/about/office.webp",
             "images_webp/about/company.webp",
             "images_webp/about/office2.webp",
